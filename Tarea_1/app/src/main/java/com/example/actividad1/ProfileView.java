@@ -47,9 +47,15 @@ public class ProfileView extends AppCompatActivity {
 
         if (validated.get()){
             Toast.makeText(this, "Informacion Guardada", Toast.LENGTH_LONG).show();
-
+            String nombre = binding.textName.getText().toString();
+            String matricula = binding.textMatricula.getText().toString();
+            String carrera = binding.SpinnerCarrera.getSelectedItem().toString();
             // Crear el Intent para abrir la pantalla ResumenPerfil
             Intent intent = new Intent(ProfileView.this, ResumenPerfil.class);
+            //el putExtra me deja mandar datos para la otra pantalla junto con el intent, asi tomo lo que escribe el usuario.
+            intent.putExtra("extra_nombre", nombre);
+            intent.putExtra("extra_matricula", matricula);
+            intent.putExtra("extra_carrera", carrera);
             startActivity(intent);
         }
     }

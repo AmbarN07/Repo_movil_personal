@@ -7,17 +7,33 @@
     android:layout_height="match_parent"
     tools:context=".ResumenPerfil">
 
+    <!-- Si en algun momento la imagen dice tool: lo que sea no se vera en la app solo en el editor :c -->
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="565dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
+        android:background="#636FA75A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/face_black_icon" />
+        app:srcCompat="@drawable/verified_user_black_icon" />
 
     <TextView
         android:id="@+id/lable_bienvenida"
@@ -28,12 +44,14 @@
         android:layout_marginEnd="80dp"
         android:gravity="center"
         android:text="@string/Valor_bienvenida"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/texto_bienvenida"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
@@ -46,113 +64,118 @@
         app:layout_constraintTop_toBottomOf="@+id/lable_bienvenida" />
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="300dp"
-        android:layout_marginEnd="300dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:id="@+id/icono_nombre"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texto_bienvenida"
         app:srcCompat="@drawable/user_black_icon" />
 
     <TextView
         android:id="@+id/lable_resumen_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginStart="16dp"
         android:text="@string/Valor_lableName"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/icono_nombre"
+        app:layout_constraintTop_toTopOf="@+id/icono_nombre" />
 
     <TextView
         android:id="@+id/Resumen_name_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
         android:text="@string/Resumen_NameValue"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/icono_nombre"
         app:layout_constraintTop_toBottomOf="@+id/lable_resumen_name" />
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="300dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/icono_matricula"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/icono_nombre"
         app:srcCompat="@drawable/id_card_black_icon" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="300dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:srcCompat="@drawable/school_hat_black_icon" />
 
     <TextView
         android:id="@+id/lable_resumen_matricula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
         android:text="@string/Valor_lableMatricula"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/Resumen_name_text" />
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/icono_matricula"
+        app:layout_constraintTop_toTopOf="@+id/icono_matricula" />
 
     <TextView
         android:id="@+id/Resumen_matricula_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
         android:text="@string/Resumen_matriculaValue"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/icono_matricula"
         app:layout_constraintTop_toBottomOf="@+id/lable_resumen_matricula" />
+
+    <ImageView
+        android:id="@+id/icono_carrera"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icono_matricula"
+        app:srcCompat="@drawable/school_hat_black_icon" />
 
     <TextView
         android:id="@+id/resumen_lable_carrera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
         android:text="@string/Valor_lableCarrera"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/Resumen_matricula_text" />
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/icono_carrera"
+        app:layout_constraintTop_toTopOf="@+id/icono_carrera" />
 
     <TextView
         android:id="@+id/Resumen_carrera_text"
-        android:layout_width="234dp"
-        android:layout_height="35dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
         android:text="@string/Resumen_carreraValue"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/icono_carrera"
         app:layout_constraintTop_toBottomOf="@+id/resumen_lable_carrera" />
 
     <Button
         android:id="@+id/Editar_button"
+        style="@style/Widget.Material3.Button"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="80dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="98dp"
+        android:layout_marginEnd="64dp"
         android:text="@string/Resumen_buttonText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Resumen_carrera_text" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
